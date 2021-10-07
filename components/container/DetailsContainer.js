@@ -1,11 +1,15 @@
  import React from 'react'
  import { StyleSheet, Text, View } from 'react-native'
- 
- const DetailsContainer = () => {
+ import Detailedinfo from '../layouts/Detailedinfo'
+import detailsRequest from '../service/detailsapi'
+ const DetailsContainer = (props) => {
+     const results=detailsRequest(props.props.route.params.type,props.props.route.params.id)
      return (
-         <View>
-             <Text>Maneesh</Text>
-         </View>
+         <>
+{
+    !results.isLoading&&(results.response!==null)?<Detailedinfo data={results.response}/>:""
+}
+         </>
      )
  }
  

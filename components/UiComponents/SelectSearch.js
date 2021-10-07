@@ -9,6 +9,7 @@ import {
 export const SelectMovies = (props) => {
   let [service, setService] = React.useState("");
   return (
+    <Center >
     <VStack alignItems="center" space={4}>
       <Select
         selectedValue={service}
@@ -29,6 +30,7 @@ export const SelectMovies = (props) => {
         <Select.Item label="tv" value="tv" />
       </Select>
     </VStack>
+  </Center>
   );
 };
 

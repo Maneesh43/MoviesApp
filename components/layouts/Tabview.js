@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { View, StyleSheet, Dimensions, StatusBar } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
+import { View, StyleSheet, Dimensions, StatusBar,Text } from 'react-native';
+import { TabView, SceneMap,TabBar} from 'react-native-tab-view';
 import FirstRoute from '../Tabs/Firstroute';
 import SecondRoute from '../Tabs/SecondRoute';
 import ThirdRoute from '../Tabs/ThirdRoute'
@@ -32,8 +32,17 @@ const [index, setIndex] = React.useState(0);
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={initialLayout}
+      renderTabBar={(props) => (
+        <TabBar
+          {...props}
+          renderLabel={({ route, color }) => (
+            <Text style={{ color: "black", margin: 8 }}>{route.title}</Text>
+          )}
+          indicatorStyle={{ backgroundColor: "#2c3e50" }}
+          style={{ backgroundColor: "white" }}
+        />
+      )}
       style={styles.container}
-
     />
   );
 }
@@ -41,6 +50,7 @@ const [index, setIndex] = React.useState(0);
 const styles = StyleSheet.create({
   container: {
     marginTop: StatusBar.currentHeight,
+    backgroundColor:"white"
   },
   scene: {
     flex: 1,

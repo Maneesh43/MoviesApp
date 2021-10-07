@@ -1,11 +1,11 @@
 
-import {VStack } from 'native-base'
+import {VStack,Box} from 'native-base'
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import DataList from '../lists/List'
 import apiRequest from '../service/api'
 import { SelectMovies } from '../UiComponents/SelectMovies'
-import { useNavigation} from '@react-navigation/native'
+
 const FirstRoute = (props) => {
     const type='movie'
     const [select,setSelect]=useState('now_playing')
@@ -14,6 +14,7 @@ const FirstRoute = (props) => {
     }
     const results=apiRequest(type,select)
       return (
+        <Box p={'.5rem'} flex={1}>
         <VStack style={{flex:1}}>
           <SelectMovies changed={currentlySelected} />
           {results && !results.loading && results.response !== null ? (
@@ -22,6 +23,7 @@ const FirstRoute = (props) => {
             ""
           )}
         </VStack>
+        </Box>
       );
 }
 
