@@ -8,10 +8,12 @@ import {
 } from "native-base";
 
 
+
 export const SelectMovies = (props) => {
   let [service, setService] = React.useState("");
   return (
     <Center px={3} m={'1rem'}>
+
     <VStack alignItems="center" space={4}>
       <Select
         selectedValue={service}
@@ -33,7 +35,9 @@ export const SelectMovies = (props) => {
         <Select.Item label="upcoming" value="upcoming" />
       </Select>
     </VStack>
+
   </Center>
+
   );
 };
 

@@ -31,6 +31,7 @@ const AppStack = () => (
           {title:route.params.label,
           headerBackTitle:"Back to list"}
         )}
+
       />
     </Stack.Navigator>
   </NavigationContainer>

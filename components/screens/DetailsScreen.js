@@ -3,6 +3,7 @@ import DetailsContainer from "../container/DetailsContainer";
 
 const DetailsScreen = (props) => {
     return (
+
        <DetailsContainer props={props}/>
     )
 }

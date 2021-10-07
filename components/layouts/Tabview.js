@@ -43,6 +43,7 @@ const [index, setIndex] = React.useState(0);
         />
       )}
       style={styles.container}
+
     />
   );
 }
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: StatusBar.currentHeight,
     backgroundColor:"white"
+
   },
   scene: {
     flex: 1,

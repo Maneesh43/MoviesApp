@@ -1,5 +1,7 @@
 
 import {VStack,Box} from 'native-base'
+
+
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import DataList from '../lists/List'
@@ -14,7 +16,9 @@ const FirstRoute = (props) => {
     }
     const results=apiRequest(type,select)
       return (
+
         <Box p={'.5rem'} flex={1}>
+
         <VStack style={{flex:1}}>
           <SelectMovies changed={currentlySelected} />
           {results && !results.loading && results.response !== null ? (
@@ -23,7 +27,9 @@ const FirstRoute = (props) => {
             ""
           )}
         </VStack>
+
         </Box>
+
       );
 }
 
