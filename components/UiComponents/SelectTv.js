@@ -9,6 +9,9 @@ import {
 export const SelectTv = (props) => {
   let [service, setService] = React.useState("");
   return (
+    <Center m={'1rem'}>
+
+
     <VStack alignItems="center" space={4}>
       <Select
         selectedValue={service}
@@ -30,6 +33,8 @@ export const SelectTv = (props) => {
         <Select.Item label="top rated" value="top_rated" />
       </Select>
     </VStack>
+  </Center>
+
   );
 };
 

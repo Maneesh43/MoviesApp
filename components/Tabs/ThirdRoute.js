@@ -1,4 +1,6 @@
-import { VStack } from "native-base";
+
+import { Container, VStack,Box } from "native-base";
+
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import DataList from "../lists/List";
@@ -11,8 +13,10 @@ const FirstRoute = () => {
     setSelect(data);
   };
   const results = apiRequest(type, select);
-  console.log(results)
+
   return (
+    <Box flex={1} p={'.5rem'}> 
+
     <VStack style={{ flex: 1 }}>
       <SelectTv changed={currentlySelected} />
       {results && !results.loading && results.response !== null ? (
@@ -21,6 +25,9 @@ const FirstRoute = () => {
         ""
       )}
     </VStack>
+
+    </Box>
+
   );
 };
 

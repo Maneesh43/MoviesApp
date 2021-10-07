@@ -27,10 +27,11 @@ const AppStack = () => (
       <Stack.Screen
         name="Details"
         component={DetailsScreen}
-        options={({ route }) => ({
-          title: 'Movies',
-          headerBackTitle: "Back to Show",
-        })}
+        options={({ route }) => (
+          {title:route.params.label,
+          headerBackTitle:"Back to list"}
+        )}
+
       />
     </Stack.Navigator>
   </NavigationContainer>
