@@ -33,4 +33,8 @@ const FirstRoute = (props) => {
 
 export default FirstRoute
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  DataList:{
+    
+  }
+})

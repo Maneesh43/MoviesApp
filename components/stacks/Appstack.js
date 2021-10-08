@@ -29,7 +29,7 @@ const AppStack = () => (
         component={DetailsScreen}
         options={({ route }) => (
           {title:route.params.label,
-          headerBackTitle:"Back to list"}
+          headerBackTitle:"Back to list",headerBackTitleVisible:'true'}
         )}
 
       />

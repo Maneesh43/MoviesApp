@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import {VStack} from 'native-base'
+import {Center, VStack} from 'native-base'
 import Form from '../forms/Form'
 import {APP_KEY} from '../config/api_config'
 import DataList from '../lists/List'
+import { fontWeight } from 'styled-system'
 const SecondRoute = () => {
 const [result,setResult]=useState({})
 const [status,setStatus]=useState(false)
@@ -16,7 +17,7 @@ const [status,setStatus]=useState(false)
        <VStack style={{flex:1}}>
            <Form formSubmit={formSubmit}/>
            {
-               status?<DataList data={result}/>:""
+               !status?<Center flex={1} ><Text style={{fontWeight:"bold"}}>Please Initiate a Search</Text></Center>:<DataList data={result}/>
            }
        </VStack>
     )

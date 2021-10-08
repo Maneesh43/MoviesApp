@@ -29,7 +29,7 @@ export const SelectMovies = (props) => {
         props.changed(itemValue)
         } }
       >
-        <Select.Item label="now playing" value="now_playing" />
+        <Select.Item label="now playing" value="now_playing"/>
         <Select.Item label="popular" value="popular" />
         <Select.Item label="top rated" value="top_rated" />
         <Select.Item label="upcoming" value="upcoming" />

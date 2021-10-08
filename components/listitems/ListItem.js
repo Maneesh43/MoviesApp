@@ -1,12 +1,12 @@
 
 import React from 'react'
 import { StyleSheet, Text} from 'react-native'
-import {Container, Button, HStack,Image,VStack, Center} from 'native-base'
+import {Box, Button, HStack,Image,VStack, Center} from 'native-base'
 import { display, fontWeight } from 'styled-system';
 
 const ListItem = (props) => {
     return (
-      <Container p={'.5rem'}>
+      <Box p={'.5rem'}>
         <HStack p={'.5rem'} style={styles.hstack}>
 
           <Image
@@ -18,13 +18,13 @@ const ListItem = (props) => {
           />
 
           <VStack pl={2} flex={1} style={styles.textData}>
-            <Text pb={2} style={styles.headingStyle}>{props.item.title?props.item.title:props.item.original_name}</Text>
-            <Text>Popularity {props.item.popularity}</Text>
-            <Text>Release date {props.item.release_date}</Text>
+            <Text  style={styles.headingStyle}>{props.item.title?props.item.title:props.item.original_name}</Text>
+            <Text style={{paddingBottom:'2.5px'}}>Popularity {props.item.popularity}</Text>
+            <Text style={{paddingBottom:'2.5px'}}>Release date {props.item.release_date}</Text>
             <Button onPress={()=>props.nav.navigate('Details',{label:props.item.title?props.item.title:props.item.original_name,id:props.item.id,type:(props.data.type)?props.data.type:props.item.media_type})}>more details</Button>
           </VStack>
         </HStack>
-      </Container>
+      </Box>
     );
 }
 
@@ -34,7 +34,8 @@ const styles=StyleSheet.create({
     justifyContent:'space-between',
   },
   headingStyle:{
-    fontWeight:'600'
+    fontWeight:'600',
+    paddingBottom:'2.5px'
   },
   hstack:{
     width:'100%'
