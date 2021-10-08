@@ -1,28 +1,27 @@
 import { VStack, Box } from "native-base";
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
-import DataList from "../lists/List";
+import { StyleSheet, View, Text } from "react-native";
+import DataList from "../lists/DataList";
 import apiRequest from "../service/api";
 import SelectMovies from "../UiComponents/SelectMovies";
 
 const Route1 = (props) => {
   const type = "movie";
   const [select, setSelect] = useState("now_playing");
-  const currentlySelected = (data) => {
-    setSelect(data);
+  const currentlySelected = (item) => {
+    setSelect(item);
   };
-  const results = apiRequest(type, select);
+  const results = apiRequest("movie", select);
+  console.log(results);
   return (
-    <Box p={".5rem"} flex={1}>
-      <VStack style={{ flex: 1 }}>
-        <SelectMovies changed={currentlySelected} />
-        {results && !results.loading && results.response !== null ? (
-          <DataList type={type} data={results.response} />
-        ) : (
-          ""
-        )}
-      </VStack>
-    </Box>
+    <View flex={1}>
+      <SelectMovies changed={currentlySelected} />
+      {results.isLoading === false && results.response !== null ? (
+        <DataList data={results.response.results} />
+      ) : (
+        <Text>Loading...</Text>
+      )}
+    </View>
   );
 };
 

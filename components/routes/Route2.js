@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { Center, VStack } from "native-base";
 import Form from "../forms/Form";
 import { APP_KEY } from "../config/api_config";
-import DataList from "../lists/List";
+import DataList from "../lists/DataList";
 import { fontWeight } from "styled-system";
 
 const Route2 = () => {

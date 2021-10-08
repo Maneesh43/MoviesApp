@@ -1,31 +1,31 @@
-import { Container, VStack, Box } from "native-base";
+import { VStack, Box } from "native-base";
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import DataList from "../lists/List";
+import { StyleSheet, View, Text } from "react-native";
+import DataList from "../lists/DataList";
 import apiRequest from "../service/api";
 import SelectTv from "../UiComponents/SelectTv";
-const Route3 = () => {
-  const type = "tv";
-  const [select, setSelect] = useState("popular");
-  const currentlySelected = (data) => {
-    setSelect(data);
-  };
-  const results = apiRequest(type, select);
 
+const Route1 = (props) => {
+  const type = "movie";
+  const [select, setSelect] = useState("popular");
+  const currentlySelected = (item) => {
+    setSelect(item);
+  };
+  const results = apiRequest("tv", select);
   return (
-    <Box flex={1} p={".5rem"}>
-      <VStack style={{ flex: 1 }}>
-        <SelectTv changed={currentlySelected} />
-        {results && !results.loading && results.response !== null ? (
-          <DataList type={type} data={results.response} />
-        ) : (
-          ""
-        )}
-      </VStack>
-    </Box>
+    <View flex={1}>
+      <SelectTv changed={currentlySelected} />
+      {results.isLoading === false && results.response !== null ? (
+        <DataList data={results.response.results} />
+      ) : (
+        <Text>Loading...</Text>
+      )}
+    </View>
   );
 };
 
-export default Route3;
+export default Route1;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  DataList: {},
+});
