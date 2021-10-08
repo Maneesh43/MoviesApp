@@ -12,7 +12,7 @@ const DataList = (props) => {
       <FlatList
         data={props.data.results}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item,index) => index.toString()}
       />
     </View>
   );
