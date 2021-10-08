@@ -7,7 +7,9 @@ const ListItem = ({ items,nav,rout}) => {
   
   (items.title)?title=items.title:title=items.original_name;
   let release;
-  (items.release_date)?release=items.release_date:release=items.first_air_date
+  (items.release_date)?release=items.release_date:release=items.first_air_date;
+  let mtype;
+  (items.title)?mtype='movie':mtype='tv'
   return (
     <View flex={1} style={{ width: "100%" }}>
       <View>
@@ -28,7 +30,8 @@ const ListItem = ({ items,nav,rout}) => {
             nav.navigate("Details", {
               label: title,
               id:items.id,
-              type: items.title?"movie":"tv",
+              type:mtype,
+              released:release
             })
           }
         >
