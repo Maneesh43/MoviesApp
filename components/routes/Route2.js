@@ -15,7 +15,7 @@ const Route2 = () => {
     )
       .then((r) => r.json())
       .then((p) => {
-        setResult(p);
+        setResult(p.results);
         setStatus(true);
       })
       .catch((e) => console.log(e));
