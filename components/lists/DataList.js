@@ -15,10 +15,9 @@ import ListItem from "../listitems/ListItem";
 const DataList = ({ data }) => {
   const navigation=useNavigation()
   const route=useRoute()
-  const renderItem = ({ item }) => <ListItem items={item} nav={navigation} rout={route}/>;
-console.log(data)
+  const renderItem = ({ item }) =><ListItem items={item} nav={navigation} rout={route}/>;
   return (
-    <View style={styles.container}>
+    <View style={styles.container} >
       <FlatList
         data={data}
         renderItem={renderItem}

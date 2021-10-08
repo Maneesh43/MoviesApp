@@ -13,7 +13,7 @@ const Route1 = (props) => {
   };
   const results = apiRequest("tv", select);
   return (
-    <View flex={1}>
+    <View flex={1} style={{height:'100vh'}}>
       <SelectTv changed={currentlySelected} />
       {results.isLoading === false && results.response !== null ? (
         <DataList data={results.response.results} />

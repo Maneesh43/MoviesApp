@@ -14,7 +14,7 @@ const Route1 = (props) => {
   const results = apiRequest("movie", select);
   console.log(results);
   return (
-    <View flex={1}>
+    <View flex={1} style={{height:'100vh'}}>
       <SelectMovies changed={currentlySelected} />
       {results.isLoading === false && results.response !== null ? (
         <DataList data={results.response.results} />
@@ -28,5 +28,4 @@ const Route1 = (props) => {
 export default Route1;
 
 const styles = StyleSheet.create({
-  DataList: {},
 });

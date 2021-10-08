@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Box, Button, HStack, Image, VStack, Center } from "native-base";
+import { paddingLeft } from "styled-system";
 
 const ListItem = ({ items,nav,rout}) => {
   let title;
@@ -11,18 +12,20 @@ const ListItem = ({ items,nav,rout}) => {
   let mtype;
   (items.title)?mtype='movie':mtype='tv'
   return (
-    <View flex={1} style={{ width: "100%" }}>
+    <View flex={1} style={styles.centerAlignItem} >
+      
       <View>
         <Image
           source={{
             uri: `https://image.tmdb.org/t/p/w500${items.poster_path}`,
           }}
           alt="Alternate Text"
-          size="xl"
+          size="lg"
         />
       </View>
-      <View>
-        <Text>{title}</Text>
+
+      <View style={styles.aligntoImage}>
+        <Text style={styles.header1}>{title}</Text>
         <Text>Popularity{items.popularity}</Text>
         <Text>Release Date{release}</Text>
         <Button
@@ -43,4 +46,21 @@ const ListItem = ({ items,nav,rout}) => {
 };
 
 export default ListItem;
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  centerAlignItem:{
+    flexDirection:'row',
+    marginLeft:'auto',
+    marginRight:'auto',
+    width:'80%',
+    padding:2
+  },
+  aligntoImage:{
+    justifyContent:'space-between',
+    marginLeft:5,
+    width:'80%'
+  },
+  header1:{
+fontWeight:'bold',
+fontSize:'14'
+  }
+});

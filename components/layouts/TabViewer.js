@@ -19,7 +19,7 @@ const TabViewer = () => {
           component={Route1}
           options={{ tabBarColor: "#3333cc" }}
         />
-        <Tab.Screen name="search tv/movies" component={Route2} />
+        <Tab.Screen name="search results" component={Route2} />
         <Tab.Screen name="tv" component={Route3} />
       </Tab.Navigator>
     );

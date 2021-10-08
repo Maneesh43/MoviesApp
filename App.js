@@ -4,7 +4,11 @@ import React from "react";
 import AppStack from "./components/stacks/Appstack";
 import { TabView } from "react-native-tab-view";
 
+
+
+
 const App = () => {
+  
   return (
     <NativeBaseProvider>
       <AppStack />
