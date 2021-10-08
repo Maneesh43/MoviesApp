@@ -1,9 +1,7 @@
 
 import {VStack,Box} from 'native-base'
-
-
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet} from 'react-native'
 import DataList from '../lists/List'
 import apiRequest from '../service/api'
 import { SelectMovies } from '../UiComponents/SelectMovies'

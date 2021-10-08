@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { View, StyleSheet, Dimensions, StatusBar,Text } from 'react-native';
 import { TabView, SceneMap,TabBar} from 'react-native-tab-view';
-import FirstRoute from '../Tabs/Firstroute';
-import SecondRoute from '../Tabs/SecondRoute';
-import ThirdRoute from '../Tabs/ThirdRoute'
+import FirstRoute from '../tabs/FirstRoute.js';
+import SecondRoute from '../tabs/SecondRoute.js'
+import ThirdRoute from '../tabs/ThirdRoute.js'
 
 
  const initialLayout = { width: Dimensions.get('window').width };
